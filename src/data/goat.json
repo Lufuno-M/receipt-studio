@@ -1,0 +1,22 @@
+{
+  "id": "goat",
+  "name": "GOAT",
+  "sub": "Authentication receipt",
+  "category": "fashion",
+  "initial": "G",
+  "logo": "",
+  "fields": [
+    { "section": "Order" },
+    { "id": "order",   "label": "Order Number",    "default": "561418938" },
+    { "section": "Product" },
+    { "id": "product", "label": "Product Name",    "default": "Air Jordan 12 Retro 'Cherry' 2023" },
+    { "id": "style",   "label": "Style ID",        "default": "DR6897-116",      "width": "half" },
+    { "id": "size",    "label": "Size (US Men's)", "default": "10",              "width": "half" },
+    { "id": "cond",    "label": "Condition",       "default": "New, 100% Authentic" },
+    { "id": "img",     "label": "Image URL",       "default": "",                "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Purchase Price",  "default": "220", "type": "number", "width": "half" },
+    { "id": "ship",    "label": "Shipping",        "default": "13.95","type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" }
+  ]
+}

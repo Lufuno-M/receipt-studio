@@ -1,0 +1,220 @@
+/* ══════════════════════════════════════
+   RECEIPT BRAND STYLES
+   Each brand's receipt visual identity.
+   These never change — only the data does.
+══════════════════════════════════════ */
+
+/* ── END. Clothing ── */
+.end-top{background:#1a1a1a;padding:12px 16px;border-bottom:1px solid #333}
+.end-logo{font-size:13px;font-weight:800;color:#fff;letter-spacing:3px}
+.end-hero{background:#1a1a1a;padding:36px 16px 18px}
+.end-greeting{font-size:19px;letter-spacing:2.2px;line-height:27px;color:#fff;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+.end-sub{font-size:13px;letter-spacing:.3px;line-height:20px;color:#ddd}
+.end-sub a{color:#fff;font-weight:700;text-decoration:none}
+.end-body{background:#fff}
+.end-order-title{padding:40px 16px 20px;font-size:16px;font-weight:700;color:#333}
+.end-product{padding:0 16px;display:flex;gap:18px;align-items:flex-start}
+.end-img{width:76px;height:76px;background:#e0e0e0;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden}
+.end-img img{width:100%;height:100%;object-fit:cover}
+.end-pname{font-size:13px;line-height:20px;color:#000}
+.end-pcolor{font-size:13px;line-height:20px;color:#999}
+.end-psizeprice{display:flex;justify-content:space-between;font-size:13px;color:#000;margin-top:2px}
+.end-lines{padding:20px 16px 0}
+.end-line{display:flex;justify-content:space-between;font-size:12px;color:#444;padding-bottom:7px}
+.end-total-row{display:flex;justify-content:space-between;padding:8px 16px 40px;border-top:1px solid #e0e0e0;margin-top:4px}
+.end-total-label,.end-total-val{font-size:17px;font-weight:700;color:#1a1a1a}
+.end-grey{background:#f2f2f2}
+.end-addresses{padding:24px 16px 12px;display:grid;grid-template-columns:1fr 1fr}
+.end-addr p{font-size:12px;line-height:19px;color:#444;padding-right:10px}
+.end-addr strong{display:block;margin:0 0 3px;font-weight:700;color:#111}
+.end-methods{padding:0 16px 4px;display:grid;grid-template-columns:1fr 1fr}
+.end-method{font-size:12px;line-height:19px;color:#444;padding-right:10px;margin-bottom:4px}
+.end-method strong{display:block;margin:4px 0 2px;font-weight:700;color:#111}
+.end-arrival{color:#5aaa55;margin-bottom:16px}
+.end-info{background:#fff;padding:36px 16px 4px}
+.end-info p{font-size:12px;line-height:19px;color:#444;margin-bottom:14px;max-width:400px}
+.end-info strong{font-weight:700;display:block;margin-bottom:5px;color:#111}
+.end-qs{background:#fff;padding:4px 16px 32px}
+.end-qs p{font-size:12px;line-height:19px;color:#444;max-width:400px}
+.end-qs strong{font-weight:700;display:block;margin:6px 0 5px;color:#111}
+.end-footer{background:#f2f2f2;padding:28px 16px;text-align:center}
+.end-footer-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1a1a1a;margin-bottom:10px}
+.end-footer p{font-size:11px;line-height:16px;color:#444;margin-bottom:4px}
+.end-legal{background:#f2f2f2;padding:0 16px 28px;text-align:center;font-size:9px;line-height:16px;color:#999}
+
+/* ── GOAT ── */
+.goat-wrap{background:#fff;border:1px solid #000;font-family:Helvetica,Arial,sans-serif;display:inline-block;width:100%}
+.goat-top{display:flex;justify-content:space-between;align-items:center;padding:12px 36px;border-bottom:1px solid #000}
+.goat-logo{font-size:20px;font-weight:900;letter-spacing:4px;color:#000}
+.goat-shop{font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:underline;color:#000}
+.goat-hero{padding:24px 10% 16px;text-align:center}
+.goat-title{font-family:Georgia,serif;font-size:18px;color:#000;font-weight:100;margin-bottom:8px}
+.goat-sub{font-size:11px;color:#000;letter-spacing:.3px;line-height:17px;margin-bottom:16px}
+.goat-order-box{border:1px solid #000;margin:0 36px}
+.goat-order-num{padding:14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;text-decoration:underline;border-bottom:1px solid #000;text-align:center}
+.goat-product-img{padding:16px 52px;background:#fafafa}
+.goat-product-img-inner{width:100%;height:160px;background:#e8e8e8;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:52px;overflow:hidden}
+.goat-product-img-inner img{width:100%;height:100%;object-fit:cover}
+.goat-product-name{font-size:15px;color:#000;font-weight:500;padding:10px 16px 3px}
+.goat-attrs{list-style:disc;padding:0 16px 10px 36px;font-size:10px;line-height:19px;color:#000}
+.goat-line-row{display:flex;justify-content:space-between;padding:2px 16px;font-size:10px;color:#000}
+.goat-line-row.total{font-weight:700;font-size:11px;border-top:1px solid #000;margin:6px 0 0;padding-top:7px;padding-bottom:12px}
+.goat-footer{background:#000;padding:10px;text-align:center;font-size:9px;color:#fff;letter-spacing:1.5px;margin-top:14px;margin-bottom:0}
+/* ── StockX ── */
+.sx-wrap{background:#fff;font-family:Helvetica,Arial,sans-serif}
+.sx-header{background:#509E2F;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.sx-logo{font-size:16px;font-weight:900;color:#fff;letter-spacing:2px}
+.sx-arrival-info{text-align:center}
+.sx-arrival-label{font-size:9px;color:#fff;line-height:13px}
+.sx-arrival-date{font-size:10px;color:#fff;font-weight:700}
+.sx-body{padding:18px}
+.sx-order-conf{font-size:17px;font-weight:700;color:#000;text-align:center;margin-bottom:6px}
+.sx-congrats{font-size:11px;color:#333;text-align:center;line-height:17px;margin-bottom:18px}
+.sx-product-box{background:#fafafa;border:1px solid #eee;border-radius:4px;padding:14px;display:flex;gap:14px;align-items:flex-start}
+.sx-product-img{width:110px;height:82px;background:#e0e0e0;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;overflow:hidden}
+.sx-product-img img{width:100%;height:100%;object-fit:cover}
+.sx-product-name{font-size:13px;font-weight:700;color:#509E2F;margin-bottom:6px;line-height:17px}
+.sx-attr{font-size:10px;color:#333;margin-bottom:2px}
+.sx-line{display:flex;justify-content:space-between;font-size:10px;color:#333;padding:2px 0}
+.sx-line.total{font-weight:700;font-size:11px;border-top:1px solid #ccc;padding-top:5px;margin-top:3px}
+.sx-footer{background:#509E2F;padding:9px;text-align:center;font-size:9px;color:#fff;letter-spacing:1px;margin-top:14px}
+
+/* ── Apple ── */
+.apple-wrap{background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#1d2228}
+.apple-header{display:flex;justify-content:space-between;align-items:center;padding:14px 36px;border-bottom:1px solid #e0e0e0}
+.apple-logo{font-size:24px}
+.apple-receipt-label{font-size:24px;color:#999}
+.apple-info-grid{display:grid;grid-template-columns:1fr 1fr;background:#f5f5f5;border-radius:3px;font-size:11px;margin:14px 36px}
+.apple-info-cell{padding:10px 18px;border-right:1px solid #fff;border-bottom:1px solid #fff}
+.apple-info-label{font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px}
+.apple-info-val{color:#333;line-height:17px}
+.apple-section-header{display:flex;justify-content:space-between;align-items:center;background:#f5f5f5;padding:8px 18px;border-radius:3px;margin:14px 36px 6px;font-size:13px}
+.apple-section-header span:last-child{font-size:9px;color:#999;text-transform:uppercase}
+.apple-product-row{display:flex;gap:14px;padding:6px 36px;align-items:center}
+.apple-product-icon{width:56px;height:56px;background:#e0e0e0;border-radius:12px;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;overflow:hidden}
+.apple-product-icon img{width:100%;height:100%;object-fit:cover}
+.apple-product-name{font-size:12px;color:#333;font-weight:500;margin-bottom:2px}
+.apple-product-dev{font-size:10px;color:#999;margin-bottom:4px}
+.apple-product-type{font-size:10px;color:#333}
+.apple-product-price{margin-left:auto;font-size:12px;font-weight:700;color:#333;white-space:nowrap}
+.apple-divider{height:1px;background:#e0e0e0;margin:10px 36px}
+.apple-total-row{display:flex;justify-content:space-between;padding:3px 36px;font-size:11px;color:#333}
+.apple-total-row.grand{font-size:12px;font-weight:700;border-top:1px solid #e0e0e0;padding-top:8px;margin-top:3px}
+.apple-footer{background:#f5f5f5;margin:16px 36px;border-radius:3px;padding:12px 18px;font-size:10px;color:#666;line-height:16px}
+
+/* ── Nike ── */
+.nike-wrap{background:#fff;font-family:Helvetica,Arial,sans-serif;font-size:13px}
+.nike-header{text-align:center;padding:18px;border-bottom:1px solid #eee}
+.nike-logo{font-size:28px;font-weight:900;color:#000}
+.nike-nav{display:flex;justify-content:center;gap:28px;padding:9px;border-bottom:1px solid #eee}
+.nike-nav span{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#000}
+.nike-greeting{padding:18px;font-size:12px;line-height:19px;color:#333}
+.nike-ship-pay{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px 14px}
+.nike-box{background:#eee;padding:12px;font-size:10px;line-height:17px;color:#333}
+.nike-box-title{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #ccc;padding-bottom:5px;margin-bottom:6px}
+.nike-product-row{display:flex;gap:10px;align-items:flex-start;padding:0 18px 14px}
+.nike-product-img{width:90px;height:72px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;overflow:hidden}
+.nike-product-img img{width:100%;height:100%;object-fit:cover}
+.nike-product-name{font-size:11px;font-weight:700;color:#000;margin-bottom:3px}
+.nike-product-detail{font-size:10px;color:#555;line-height:16px}
+.nike-product-price{margin-left:auto;font-size:11px;font-weight:700;color:#000;white-space:nowrap}
+.nike-lines{padding:0 18px;border-top:1px solid #eee}
+.nike-line{display:flex;justify-content:space-between;font-size:10px;color:#333;padding:4px 0;border-bottom:1px solid #f5f5f5}
+.nike-line.total{font-weight:700;font-size:12px;border-bottom:none}
+.nike-footer{background:#111;padding:18px;text-align:center;margin-top:18px}
+.nike-footer p{font-size:9px;color:#666;line-height:15px}
+
+/* ── Louis Vuitton ── */
+.lv-wrap{background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.lv-header{text-align:center;padding:22px 18px 14px;border-bottom:1px solid #e0d9c8}
+.lv-logo{font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#000}
+.lv-body{padding:22px 28px;background:#faf9f6}
+.lv-greeting{font-size:13px;line-height:21px;color:#333;margin-bottom:18px}
+.lv-product-row{display:flex;gap:18px;margin-bottom:18px;align-items:flex-start}
+.lv-product-img{width:90px;height:90px;background:#e8e4dc;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;overflow:hidden}
+.lv-product-img img{width:100%;height:100%;object-fit:cover}
+.lv-product-name{font-size:12px;font-weight:700;color:#000;margin-bottom:3px;letter-spacing:.5px}
+.lv-product-ref{font-size:10px;color:#888;margin-bottom:6px}
+.lv-product-price{font-size:13px;font-weight:700;color:#000}
+.lv-divider{height:1px;background:#e0d9c8;margin:14px 0}
+.lv-line{display:flex;justify-content:space-between;font-size:11px;color:#555;padding:3px 0}
+.lv-line.total{font-size:13px;font-weight:700;color:#000;border-top:1px solid #e0d9c8;padding-top:9px;margin-top:3px}
+.lv-addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.lv-addr-block{font-size:10px;line-height:17px;color:#555}
+.lv-addr-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#000;margin-bottom:3px}
+.lv-footer{background:#f1f0ec;padding:18px;text-align:center;border-top:1px solid #e0d9c8}
+.lv-footer p{font-size:9px;color:#888;line-height:15px}
+
+/* ── eBay ── */
+.ebay-wrap{background:#fff;font-family:Arial,sans-serif}
+.ebay-header{display:flex;align-items:center;padding:12px 18px;border-bottom:2px solid #e0e0e0}
+.ebay-e{color:#e53238}.ebay-b{color:#0064d2}.ebay-a{color:#f5af02}.ebay-y{color:#86b817}
+.ebay-body{padding:18px}
+.ebay-title{font-size:18px;font-weight:700;color:#333;margin-bottom:5px}
+.ebay-subtitle{font-size:12px;color:#555;line-height:17px;margin-bottom:18px}
+.ebay-product-row{display:flex;gap:14px;margin-bottom:18px;align-items:center;border:1px solid #e0e0e0;padding:12px;border-radius:4px}
+.ebay-product-img{width:72px;height:72px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden}
+.ebay-product-img img{width:100%;height:100%;object-fit:cover}
+.ebay-product-name{font-size:12px;font-weight:700;color:#0064d2;margin-bottom:3px;text-decoration:underline}
+.ebay-product-detail{font-size:10px;color:#666;line-height:16px}
+.ebay-product-price{margin-left:auto;font-size:15px;font-weight:700;color:#333;white-space:nowrap}
+.ebay-lines{border:1px solid #e0e0e0;border-radius:4px;overflow:hidden;margin-bottom:14px}
+.ebay-line{display:flex;justify-content:space-between;font-size:11px;color:#333;padding:7px 12px;border-bottom:1px solid #f0f0f0}
+.ebay-line:last-child{border-bottom:none}
+.ebay-line.total{background:#fafafa;font-weight:700;font-size:13px}
+.ebay-footer{background:#f5f5f5;padding:12px 18px;font-size:9px;color:#888;line-height:15px}
+
+/* ── Patagonia ── */
+.pat-wrap{background:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+.pat-header{background:#1a3a1a;padding:16px 22px;display:flex;align-items:center;gap:10px}
+.pat-logo{font-size:13px;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase}
+.pat-logo-icon{width:28px;height:28px;background:#4a7a4a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;overflow:hidden}
+.pat-logo-icon img{width:100%;height:100%;object-fit:contain}
+.pat-body{padding:22px}
+.pat-title{font-size:17px;font-weight:700;color:#1a3a1a;margin-bottom:5px}
+.pat-sub{font-size:12px;color:#555;line-height:18px;margin-bottom:18px}
+.pat-product-row{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;border:1px solid #d0e0d0;padding:12px;background:#f5faf5}
+.pat-product-img{width:82px;height:82px;background:#c0d8c0;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;overflow:hidden}
+.pat-product-img img{width:100%;height:100%;object-fit:cover}
+.pat-product-name{font-size:12px;font-weight:700;color:#1a3a1a;margin-bottom:3px}
+.pat-product-color{font-size:10px;color:#666;margin-bottom:5px}
+.pat-product-price{font-size:13px;font-weight:700;color:#1a3a1a}
+.pat-lines{margin-bottom:14px}
+.pat-line{display:flex;justify-content:space-between;font-size:11px;color:#555;padding:4px 0;border-bottom:1px solid #e8ece8}
+.pat-line.total{font-weight:700;font-size:13px;color:#1a3a1a;border-bottom:none}
+.pat-addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#f5faf5;padding:12px;border:1px solid #d0e0d0}
+.pat-addr-block{font-size:10px;line-height:17px;color:#555}
+.pat-addr-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#1a3a1a;margin-bottom:3px}
+.pat-footer{background:#1a3a1a;padding:14px 22px}
+.pat-footer p{font-size:9px;color:#7aa07a;line-height:15px;text-align:center}
+/* ── Amazon ── */
+.amz-wrap{background:#fff;font-family:'Amazon Ember',Arial,sans-serif}
+.amz-header{background:#232f3e;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
+.amz-logo{font-size:22px;font-weight:900;color:#ff9900;letter-spacing:-1px;font-family:Arial,sans-serif}
+.amz-order-info{text-align:right}
+.amz-order-label{font-size:9px;color:#aaa;letter-spacing:1px;text-transform:uppercase}
+.amz-order-num{font-size:11px;color:#ff9900;font-weight:700}
+.amz-body{padding:22px}
+.amz-greeting{font-size:18px;font-weight:700;color:#0f1111;margin-bottom:6px}
+.amz-thanks{font-size:12px;color:#555;line-height:18px;margin-bottom:14px}
+.amz-arrival-box{background:#f0f7e6;border:1px solid #5a9e3a;border-radius:4px;padding:12px 16px;margin-bottom:18px}
+.amz-arrival-label{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+.amz-arrival-date{font-size:16px;font-weight:700;color:#007600}
+.amz-product-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0}
+.amz-product-img{width:80px;height:80px;background:#f0f0f0;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;overflow:hidden}
+.amz-product-img img{width:100%;height:100%;object-fit:cover}
+.amz-product-name{font-size:12px;color:#0066c0;margin-bottom:4px;line-height:17px}
+.amz-product-sold{font-size:10px;color:#555;margin-bottom:2px}
+.amz-product-qty{font-size:10px;color:#555}
+.amz-product-price{font-size:14px;font-weight:700;color:#0f1111;white-space:nowrap;margin-left:auto}
+.amz-divider{height:1px;background:#e7e7e7;margin:8px 0}
+.amz-lines{font-size:12px}
+.amz-line{display:flex;justify-content:space-between;padding:3px 0;color:#333}
+.amz-line.total{font-size:15px;font-weight:700;color:#0f1111;padding-top:8px}
+.amz-line.discount{color:#b12704}
+.amz-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;padding-top:14px;border-top:1px solid #e7e7e7}
+.amz-info-block{font-size:11px}
+.amz-info-label{font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#555;margin-bottom:4px;font-weight:700}
+.amz-info-val{color:#333;line-height:17px}
+.amz-footer{background:#232f3e;padding:14px 22px;text-align:center}
+.amz-footer p{font-size:9px;color:#aaa;line-height:15px;margin-bottom:3px}

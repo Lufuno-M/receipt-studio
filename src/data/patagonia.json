@@ -1,0 +1,29 @@
+{
+  "id": "patagonia",
+  "name": "Patagonia",
+  "sub": "Order confirmation",
+  "category": "apparel",
+  "initial": "P",
+  "logo": "",
+  "fields": [
+    { "section": "Customer" },
+    { "id": "name",      "label": "Name",          "default": "Alex Rivera",          "width": "half" },
+    { "id": "order",     "label": "Order Number",  "default": "PT-20240628-5519",     "width": "half" },
+    { "section": "Product" },
+    { "id": "product",   "label": "Product Name",  "default": "Better Sweater® Fleece Jacket" },
+    { "id": "color",     "label": "Color",         "default": "New Navy",             "width": "half" },
+    { "id": "size",      "label": "Size",          "default": "M",                    "width": "half" },
+    { "id": "img",       "label": "Image URL",     "default": "",                     "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",     "label": "Price",         "default": "139",   "type": "number", "width": "half" },
+    { "id": "ship",      "label": "Shipping",      "default": "0",     "type": "number", "width": "half" },
+    { "id": "tax",       "label": "Tax",           "default": "11.12", "type": "number", "width": "half" },
+    { "id": "disc",      "label": "Discount",      "default": "0",     "type": "number", "width": "half" },
+    { "id": "_total",    "type": "total" },
+    { "section": "Delivery" },
+    { "id": "saddr",     "label": "Ship To",       "default": "123 Main Street, Denver, CO 80201" },
+    { "id": "paymethod", "label": "Payment",       "default": "Visa •••• 4521" },
+    { "id": "arr1",      "label": "Arrival From",  "default": "Jul 3, 2024", "width": "half" },
+    { "id": "arr2",      "label": "Arrival To",    "default": "Jul 8, 2024", "width": "half" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ebay",
+  "name": "eBay",
+  "sub": "Purchase confirmation",
+  "category": "market",
+  "initial": "e",
+  "logo": "",
+  "fields": [
+    { "section": "Order" },
+    { "id": "name",    "label": "Buyer Name",   "default": "John Smith",          "width": "half" },
+    { "id": "date",    "label": "Date",         "default": "Jun 28, 2024",        "width": "half" },
+    { "id": "order",   "label": "Order Number", "default": "12-08563-71849" },
+    { "section": "Item" },
+    { "id": "product", "label": "Item Name",    "default": "Nike Air Jordan 1 Retro High OG Chicago" },
+    { "id": "seller",  "label": "Seller",       "default": "sneaker_connect_za",  "width": "half" },
+    { "id": "cond",    "label": "Condition",    "default": "Brand New",           "width": "half" },
+    { "id": "size",    "label": "Size",         "default": "US 10" },
+    { "id": "img",     "label": "Image URL",    "default": "",                    "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Item Price",   "default": "350",  "type": "number", "width": "half" },
+    { "id": "ship",    "label": "Shipping",     "default": "15",   "type": "number", "width": "half" },
+    { "id": "tax",     "label": "Tax",          "default": "28",   "type": "number", "width": "half" },
+    { "id": "disc",    "label": "Discount",     "default": "0",    "type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" },
+    { "section": "Delivery" },
+    { "id": "saddr",   "label": "Ship To",      "default": "123 Main Street, Phoenix, AZ 85001" }
+  ]
+}

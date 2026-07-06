@@ -1,0 +1,26 @@
+{
+  "id": "lv",
+  "name": "Louis Vuitton",
+  "sub": "Order receipt",
+  "category": "fashion",
+  "initial": "LV",
+  "logo": "",
+  "fields": [
+    { "section": "Customer" },
+    { "id": "name",    "label": "Name",         "default": "Alexandre Dupont" },
+    { "id": "order",   "label": "Order Number", "default": "FR-2024-00847291", "width": "half" },
+    { "id": "date",    "label": "Date",         "default": "June 28, 2024",    "width": "half" },
+    { "section": "Product" },
+    { "id": "product", "label": "Item Name",    "default": "Neverfull MM Tote Bag" },
+    { "id": "ref",     "label": "Reference",    "default": "M40995" },
+    { "id": "desc",    "label": "Description",  "default": "Monogram Canvas, Rose Ballerine lining" },
+    { "id": "img",     "label": "Image URL",    "default": "",                 "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Price",        "default": "1800", "type": "number", "width": "half" },
+    { "id": "tax",     "label": "Tax",          "default": "0",    "type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" },
+    { "section": "Delivery" },
+    { "id": "saddr",      "label": "Ship To",       "default": "1500 Fifth Avenue, New York, NY 10001" },
+    { "id": "paymethod",  "label": "Payment",       "default": "Visa •••• 4521" }
+  ]
+}

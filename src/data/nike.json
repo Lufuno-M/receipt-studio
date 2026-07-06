@@ -1,0 +1,28 @@
+{
+  "id": "nike",
+  "name": "Nike",
+  "sub": "Payment overview",
+  "category": "fashion",
+  "initial": "N",
+  "logo": "",
+  "fields": [
+    { "section": "Customer" },
+    { "id": "name",       "label": "First Name",      "default": "Mike",         "width": "half" },
+    { "id": "order",      "label": "Order Number",    "default": "C11937200",    "width": "half" },
+    { "section": "Product" },
+    { "id": "product",    "label": "Product Name",    "default": "Nike Air Max 90" },
+    { "id": "size",       "label": "Size",            "default": "US 10",        "width": "half" },
+    { "id": "color",      "label": "Color",           "default": "White/Black",  "width": "half" },
+    { "id": "img",        "label": "Image URL",       "default": "",             "placeholder": "https://..." },
+    { "section": "Ship To" },
+    { "id": "sname",      "label": "Name",            "default": "Mike Johnson" },
+    { "id": "saddr",      "label": "Address",         "default": "123 Main St, Atlanta, GA 30301" },
+    { "id": "shipmethod", "label": "Method",          "default": "Standard Shipping" },
+    { "section": "Pricing" },
+    { "id": "price",      "label": "Price",           "default": "110",  "type": "number", "width": "half" },
+    { "id": "tax",        "label": "Tax",             "default": "8.80", "type": "number", "width": "half" },
+    { "id": "ship",       "label": "Shipping",        "default": "0",    "type": "number", "width": "half" },
+    { "id": "disc",       "label": "Discount",        "default": "0",    "type": "number", "width": "half" },
+    { "id": "_total",     "type": "total" }
+  ]
+}

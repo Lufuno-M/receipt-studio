@@ -1,0 +1,23 @@
+{
+  "id": "stockx",
+  "name": "StockX",
+  "sub": "Order confirmation",
+  "category": "market",
+  "initial": "SX",
+  "logo": "",
+  "fields": [
+    { "section": "Product" },
+    { "id": "product", "label": "Product Name",    "default": "Adidas Yeezy Boost 350 V2 Black" },
+    { "id": "style",   "label": "Style ID",        "default": "FU9006",          "width": "half" },
+    { "id": "order",   "label": "Order Number",    "default": "982773-197852",   "width": "half" },
+    { "id": "size",    "label": "Size (US Men's)", "default": "9" },
+    { "id": "img",     "label": "Image URL",       "default": "",                "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Purchase Price",  "default": "220",   "type": "number", "width": "half" },
+    { "id": "ship",    "label": "Shipping",        "default": "13.95", "type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" },
+    { "section": "Delivery" },
+    { "id": "arr1",    "label": "Arrival From",    "default": "04/28/2024", "width": "half" },
+    { "id": "arr2",    "label": "Arrival To",      "default": "05/14/2024", "width": "half" }
+  ]
+}

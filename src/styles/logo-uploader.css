@@ -1,0 +1,32 @@
+.logo-uploader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-uploader-preview {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.logo-uploader-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+.logo-uploader-empty {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+.logo-uploader-actions {
+  display: flex;
+  gap: 6px;
+}

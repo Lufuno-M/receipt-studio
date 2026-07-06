@@ -1,0 +1,27 @@
+{
+  "id": "apple",
+  "name": "Apple",
+  "sub": "App Store receipt",
+  "category": "tech",
+  "initial": "A",
+  "logo": "",
+  "fields": [
+    { "section": "Account" },
+    { "id": "email",   "label": "Apple ID",     "default": "johnsmithy@yahoo.com" },
+    { "id": "order",   "label": "Order ID",     "default": "MK3B9DWW0J",          "width": "half" },
+    { "id": "date",    "label": "Date",         "default": "Apr 15, 2025",         "width": "half" },
+    { "section": "Billing" },
+    { "id": "card",    "label": "Card",         "default": "Visa .... 6009" },
+    { "id": "bname",   "label": "Name",         "default": "John Smithy" },
+    { "id": "baddr",   "label": "Address",      "default": "1500 Main Street, Atlanta, GA 38190" },
+    { "section": "Item" },
+    { "id": "product", "label": "App / Item",   "default": "Minecraft" },
+    { "id": "dev",     "label": "Developer",    "default": "Mojang",   "width": "half" },
+    { "id": "type",    "label": "Type",         "default": "App",      "width": "half" },
+    { "id": "img",     "label": "Image URL",    "default": "",         "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Price",        "default": "6.99", "type": "number", "width": "half" },
+    { "id": "tax",     "label": "Tax",          "default": "0.56", "type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" }
+  ]
+}
