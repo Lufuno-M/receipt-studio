@@ -60,7 +60,12 @@
 .goat-line-row{display:flex;justify-content:space-between;padding:2px 16px;font-size:10px;color:#000}
 .goat-line-row.total{font-weight:700;font-size:11px;border-top:1px solid #000;margin:6px 0 0;padding-top:7px;padding-bottom:12px}
 .goat-footer{background:#000;padding:10px;text-align:center;font-size:9px;color:#fff;letter-spacing:1.5px;margin-top:14px;margin-bottom:0}
-/* ── StockX ── */
+
+/* ── StockX ──
+   Verified-authentic badge, three-step authentication timeline,
+   monospace order/style IDs, separated fee card — the process-driven
+   register that distinguishes StockX's real confirmation emails from
+   a plain marketplace receipt. */
 .sx-wrap{background:#fff;font-family:Helvetica,Arial,sans-serif}
 .sx-header{background:#509E2F;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
 .sx-logo{font-size:16px;font-weight:900;color:#fff;letter-spacing:2px}
@@ -69,14 +74,28 @@
 .sx-arrival-date{font-size:10px;color:#fff;font-weight:700}
 .sx-body{padding:18px}
 .sx-order-conf{font-size:17px;font-weight:700;color:#000;text-align:center;margin-bottom:6px}
-.sx-congrats{font-size:11px;color:#333;text-align:center;line-height:17px;margin-bottom:18px}
-.sx-product-box{background:#fafafa;border:1px solid #eee;border-radius:4px;padding:14px;display:flex;gap:14px;align-items:flex-start}
+.sx-congrats{font-size:11px;color:#333;text-align:center;line-height:17px;margin-bottom:14px}
+.sx-verify-badge{display:flex;align-items:center;justify-content:center;gap:6px;background:#eef7e9;border:1px solid #509E2F;border-radius:20px;padding:6px 14px;margin:0 auto 18px;width:fit-content}
+.sx-verify-badge svg{width:13px;height:13px;flex-shrink:0}
+.sx-verify-badge span{font-size:10px;font-weight:700;letter-spacing:.5px;color:#357a1f;text-transform:uppercase}
+.sx-timeline{display:flex;align-items:flex-start;padding:0 6px;margin-bottom:20px}
+.sx-timeline-step{flex:1;text-align:center;position:relative}
+.sx-timeline-dot{width:9px;height:9px;border-radius:50%;background:#509E2F;margin:0 auto 6px;position:relative;z-index:1}
+.sx-timeline-step.pending .sx-timeline-dot{background:#dcdcdc}
+.sx-timeline-line{position:absolute;top:4px;left:50%;width:100%;height:1px;background:#509E2F;z-index:0}
+.sx-timeline-step.pending .sx-timeline-line{background:#dcdcdc}
+.sx-timeline-step:last-child .sx-timeline-line{display:none}
+.sx-timeline-label{font-size:8px;letter-spacing:.6px;text-transform:uppercase;color:#333;font-weight:600}
+.sx-timeline-step.pending .sx-timeline-label{color:#999}
+.sx-product-box{background:#fafafa;border:1px solid #eee;border-radius:4px;padding:14px;display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
 .sx-product-img{width:110px;height:82px;background:#e0e0e0;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;overflow:hidden}
 .sx-product-img img{width:100%;height:100%;object-fit:cover}
 .sx-product-name{font-size:13px;font-weight:700;color:#509E2F;margin-bottom:6px;line-height:17px}
-.sx-attr{font-size:10px;color:#333;margin-bottom:2px}
-.sx-line{display:flex;justify-content:space-between;font-size:10px;color:#333;padding:2px 0}
-.sx-line.total{font-weight:700;font-size:11px;border-top:1px solid #ccc;padding-top:5px;margin-top:3px}
+.sx-attr{font-size:10px;color:#333;margin-bottom:2px;font-family:'SF Mono','Roboto Mono',monospace}
+.sx-fee-card{border:1px solid #eee;border-radius:4px;overflow:hidden}
+.sx-line{display:flex;justify-content:space-between;font-size:10px;color:#333;padding:7px 12px;border-bottom:1px solid #f5f5f5}
+.sx-line:last-child{border-bottom:none}
+.sx-line.total{font-weight:700;font-size:11px;background:#fafafa}
 .sx-footer{background:#509E2F;padding:9px;text-align:center;font-size:9px;color:#fff;letter-spacing:1px;margin-top:14px}
 
 /* ── Apple ── */
@@ -187,6 +206,7 @@
 .pat-addr-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#1a3a1a;margin-bottom:3px}
 .pat-footer{background:#1a3a1a;padding:14px 22px}
 .pat-footer p{font-size:9px;color:#7aa07a;line-height:15px;text-align:center}
+
 /* ── Amazon ── */
 .amz-wrap{background:#fff;font-family:'Amazon Ember',Arial,sans-serif}
 .amz-header{background:#232f3e;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
@@ -218,3 +238,91 @@
 .amz-info-val{color:#333;line-height:17px}
 .amz-footer{background:#232f3e;padding:14px 22px;text-align:center}
 .amz-footer p{font-size:9px;color:#aaa;line-height:15px;margin-bottom:3px}
+
+/* ── Goyard ──
+   Chevron canvas bands top/bottom, tri-colour personalization stripe,
+   wax-seal mark, italic correspondence-style copy. */
+.goy-wrap{background:#faf6ea;font-family:'Times New Roman',Georgia,serif;position:relative}
+.goy-chevron-band{height:12px;background:repeating-linear-gradient(45deg,#efe6cf 0 7px,#d8c690 7px 14px)}
+.goy-header{text-align:center;padding:26px 18px 12px;border-bottom:2px solid #1a1a1a;position:relative}
+.goy-logo{font-size:22px;font-weight:400;letter-spacing:9px;color:#1a1a1a;text-transform:uppercase}
+.goy-sub-header{font-size:8px;letter-spacing:3.5px;color:#a08a4f;margin-top:6px;text-transform:uppercase}
+.goy-seal{position:absolute;top:16px;right:20px;width:36px;height:36px;border:1px solid #a08a4f;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;line-height:9px;color:#a08a4f;letter-spacing:.5px;text-align:center;font-style:italic}
+.goy-stripe-row{display:flex;height:7px}
+.goy-stripe{flex:1}
+.goy-body{padding:24px 30px;background:#faf6ea}
+.goy-greeting{font-size:12px;line-height:20px;color:#333;margin-bottom:18px;font-style:italic}
+.goy-product-row{display:flex;gap:16px;margin-bottom:18px;align-items:flex-start}
+.goy-product-img{width:86px;height:86px;background:repeating-linear-gradient(45deg,#efe6cf 0 6px,#e2d5ab 6px 12px);border:1px solid #d8c690;display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0;overflow:hidden}
+.goy-product-img img{width:100%;height:100%;object-fit:cover}
+.goy-product-name{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:3px;letter-spacing:.5px}
+.goy-product-ref{font-size:9.5px;color:#8a7a4f;letter-spacing:.4px;margin-bottom:4px;text-transform:uppercase}
+.goy-product-desc{font-size:10px;color:#666;margin-bottom:6px;font-style:italic}
+.goy-product-price{font-size:13px;font-weight:700;color:#1a1a1a}
+.goy-divider{height:1px;background:linear-gradient(90deg,transparent,#a08a4f,transparent);margin:14px 0}
+.goy-line{display:flex;justify-content:space-between;font-size:11px;color:#555;padding:3px 0}
+.goy-line.total{font-size:13px;font-weight:700;color:#1a1a1a;border-top:1px solid #d8cdb0;padding-top:9px;margin-top:3px}
+.goy-addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.goy-addr-block{font-size:10px;line-height:17px;color:#555}
+.goy-addr-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#1a1a1a;margin-bottom:3px}
+.goy-craft-note{margin-top:18px;padding-top:14px;border-top:1px dotted #c9bb95;font-size:9.5px;line-height:16px;color:#8a7a4f;font-style:italic;text-align:center}
+.goy-footer{background:#efe6cf;text-align:center;border-top:1px solid #d8cdb0}
+.goy-footer-chevron{height:8px;background:repeating-linear-gradient(45deg,#e2d5ab 0 6px,#d8c690 6px 12px)}
+.goy-footer p{font-size:9px;color:#8a7a4f;letter-spacing:1.5px;padding:14px}
+
+/* ── Supreme ──
+   Skewed box-logo treatment, drop-tag bar, hangtag corner flag,
+   authentication stamp, perforated tear-line before the footer. */
+.sup-wrap{background:#fff;font-family:Helvetica,Arial,sans-serif}
+.sup-header{background:#ed1c24;padding:20px 20px 22px;text-align:center;position:relative}
+.sup-boxlogo{display:inline-block;background:#111;padding:7px 16px;transform:skewX(-8deg);box-shadow:2px 2px 0 rgba(0,0,0,.2)}
+.sup-boxlogo span,.sup-boxlogo{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:22px;font-weight:700;color:#fff;display:inline-block;transform:skewX(8deg)}
+.sup-drop-tag{background:#111;color:#fff;text-align:center;padding:5px;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.sup-body{padding:22px}
+.sup-title{font-size:18px;font-weight:800;letter-spacing:.5px;color:#111;margin-bottom:6px;text-transform:uppercase}
+.sup-sub{font-size:12px;color:#444;line-height:18px;margin-bottom:18px}
+.sup-product-row{display:flex;gap:14px;margin-bottom:16px;align-items:center;border:2px solid #111;padding:12px;position:relative}
+.sup-tag-corner{position:absolute;top:-9px;left:12px;background:#ed1c24;color:#fff;font-size:8px;font-weight:800;letter-spacing:1px;padding:2px 7px;text-transform:uppercase}
+.sup-product-img{width:76px;height:76px;background:#eee;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;overflow:hidden}
+.sup-product-img img{width:100%;height:100%;object-fit:cover}
+.sup-product-name{font-size:13px;font-weight:800;color:#111;margin-bottom:3px;text-transform:uppercase}
+.sup-product-detail{font-size:10px;color:#666;margin-bottom:5px}
+.sup-product-price{font-size:14px;font-weight:800;color:#ed1c24}
+.sup-lines{margin-bottom:14px}
+.sup-line{display:flex;justify-content:space-between;font-size:11px;color:#333;padding:5px 0;border-bottom:1px solid #f0f0f0}
+.sup-line.total{font-weight:800;font-size:14px;color:#111;border-bottom:none}
+.sup-addr{font-size:10px;line-height:17px;color:#555;background:#f7f7f7;padding:10px 12px;margin-bottom:14px}
+.sup-addr strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:3px}
+.sup-stamp{text-align:center;font-size:9px;font-weight:700;letter-spacing:2px;color:#ed1c24;border:1px solid #ed1c24;padding:6px;text-transform:uppercase}
+.sup-perf{height:0;border-top:2px dashed #ddd;margin:0 22px}
+.sup-footer{background:#111;padding:14px;text-align:center;font-size:9px;color:#999;letter-spacing:.6px}
+
+/* ── OVO ──
+   Abstract owl mark (header + faint footer watermark), gold accent bar
+   on the product row, hairline gold rule under the header. */
+.ovo-wrap{background:#0d0d0d;font-family:Helvetica,Arial,sans-serif;color:#e8e3d5}
+.ovo-header{display:flex;flex-direction:column;gap:6px;padding:20px 22px 16px;border-bottom:1px solid #2a2a2a}
+.ovo-logo-row{display:flex;align-items:center;gap:8px}
+.ovo-owl{width:20px;height:20px;flex-shrink:0}
+.ovo-logo{font-size:18px;font-weight:800;letter-spacing:2px;color:#d4af37}
+.ovo-tag{font-size:8px;letter-spacing:3px;color:#8a8a8a;text-transform:uppercase}
+.ovo-gold-rule{height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent)}
+.ovo-body{padding:22px;background:#141414}
+.ovo-title{font-size:16px;font-weight:700;color:#f0ead6;margin-bottom:5px}
+.ovo-sub{font-size:12px;color:#a8a8a8;line-height:18px;margin-bottom:18px}
+.ovo-product-row{display:flex;gap:14px;margin-bottom:18px;align-items:center;background:#1c1c1c;border:1px solid #2e2a1f;padding:12px;position:relative}
+.ovo-product-row::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#d4af37}
+.ovo-product-img{width:78px;height:78px;background:#242424;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;overflow:hidden}
+.ovo-product-img img{width:100%;height:100%;object-fit:cover}
+.ovo-product-name{font-size:12px;font-weight:700;color:#f0ead6;margin-bottom:3px}
+.ovo-product-detail{font-size:10px;color:#999;margin-bottom:5px}
+.ovo-product-price{font-size:13px;font-weight:700;color:#d4af37}
+.ovo-lines{margin-bottom:14px}
+.ovo-line{display:flex;justify-content:space-between;font-size:11px;color:#bbb;padding:4px 0;border-bottom:1px solid #232323}
+.ovo-line.total{font-weight:700;font-size:13px;color:#d4af37;border-bottom:none}
+.ovo-addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.ovo-addr-block{font-size:10px;line-height:17px;color:#999}
+.ovo-addr-block strong{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#d4af37;margin-bottom:3px}
+.ovo-owl-watermark{text-align:center;opacity:.35;margin-bottom:4px}
+.ovo-owl-watermark svg{width:22px;height:22px}
+.ovo-footer{background:#000;padding:14px;text-align:center;font-size:9px;color:#666;letter-spacing:1.5px;border-top:1px solid #2a2a2a}

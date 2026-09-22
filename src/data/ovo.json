@@ -1,0 +1,28 @@
+{
+  "id": "ovo",
+  "name": "OVO",
+  "sub": "Order confirmation",
+  "category": "streetwear",
+  "initial": "OVO",
+  "logo": "",
+  "logoPlacement": { "x": 87, "y": 91, "scale": 0.38, "rotation": 0 },
+  "fields": [
+    { "section": "Customer" },
+    { "id": "name",    "label": "Name",           "default": "Marcus Lee",     "width": "half" },
+    { "id": "order",   "label": "Order Number",   "default": "OVO-2024-31029", "width": "half" },
+    { "section": "Product" },
+    { "id": "product", "label": "Item Name",      "default": "Owl Crewneck" },
+    { "id": "size",    "label": "Size",           "default": "M",              "width": "half" },
+    { "id": "color",   "label": "Color",          "default": "Black/Gold",     "width": "half" },
+    { "id": "img",     "label": "Image URL",      "default": "",               "placeholder": "https://..." },
+    { "section": "Pricing" },
+    { "id": "price",   "label": "Price",          "default": "128", "type": "number", "width": "half" },
+    { "id": "ship",    "label": "Shipping",       "default": "0",   "type": "number", "width": "half" },
+    { "id": "tax",     "label": "Tax",            "default": "11.20","type": "number", "width": "half" },
+    { "id": "disc",    "label": "Discount",       "default": "0",   "type": "number", "width": "half" },
+    { "id": "_total",  "type": "total" },
+    { "section": "Delivery" },
+    { "id": "saddr",     "label": "Ship To",   "default": "1 Bloor St W, Toronto, ON M4W 3T2" },
+    { "id": "paymethod", "label": "Payment",   "default": "Visa •••• 7743" }
+  ]
+}

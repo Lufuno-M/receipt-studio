@@ -107,6 +107,7 @@ function renderGOAT(v, total, c, logoUrl) {
 
 function renderStockX(v, total, c, logoUrl) {
   const price = parseFloat(v.price) || 0, ship = parseFloat(v.ship) || 0;
+  const checkSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="#357a1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>`;
   return `
   <div class="sx-wrap">
     <div class="sx-header">
@@ -119,18 +120,26 @@ function renderStockX(v, total, c, logoUrl) {
     <div class="sx-body">
       <div class="sx-order-conf">Order Confirmation</div>
       <div class="sx-congrats">Congrats! Your latest StockX purchase is on the way. You can expect to receive it by ${v.arr2}.</div>
+      <div class="sx-verify-badge">${checkSvg}<span>Verified Authentic</span></div>
+      <div class="sx-timeline">
+        <div class="sx-timeline-step"><div class="sx-timeline-line"></div><div class="sx-timeline-dot"></div><div class="sx-timeline-label">Ordered</div></div>
+        <div class="sx-timeline-step"><div class="sx-timeline-line"></div><div class="sx-timeline-dot"></div><div class="sx-timeline-label">Verified</div></div>
+        <div class="sx-timeline-step pending"><div class="sx-timeline-line"></div><div class="sx-timeline-dot"></div><div class="sx-timeline-label">Shipping</div></div>
+      </div>
       <div class="sx-product-box">
         <div class="sx-product-img">${imgEl(v, 'img', '👟')}</div>
         <div>
           <div class="sx-product-name">${v.product}</div>
-          <div class="sx-attr">Style ID: ${v.style}</div>
-          <div class="sx-attr">Size: ${v.size}</div>
-          <div class="sx-attr">Order: ${v.order}</div>
-          <div class="sx-line"><span>Purchase Price:</span><span>${fmt(price, c)}</span></div>
-          <div class="sx-line"><span>Shipping:</span><span>${fmt(ship, c)}</span></div>
-          <div class="sx-line"><span>Authentication Fee:</span><span>FREE</span></div>
-          <div class="sx-line total"><span>TOTAL</span><span>${fmt(total, c)}</span></div>
+          <div class="sx-attr">STYLE ID: ${v.style}</div>
+          <div class="sx-attr">SIZE: ${v.size}</div>
+          <div class="sx-attr">ORDER: ${v.order}</div>
         </div>
+      </div>
+      <div class="sx-fee-card">
+        <div class="sx-line"><span>Purchase Price</span><span>${fmt(price, c)}</span></div>
+        <div class="sx-line"><span>Shipping</span><span>${fmt(ship, c)}</span></div>
+        <div class="sx-line"><span>Authentication Fee</span><span>FREE</span></div>
+        <div class="sx-line total"><span>TOTAL</span><span>${fmt(total, c)}</span></div>
       </div>
     </div>
     <div class="sx-footer">stockx.com | Help | Jobs</div>
@@ -344,6 +353,135 @@ function renderAmazon(v, total, c, logoUrl) {
   </div>`;
 }
 
+// ─── GOYARD ───
+// Recreates the maison's visual language: the Goyardine chevron canvas
+// pattern (top/bottom bands), the tri-colour personalization stripe that
+// appears on the trunks/totes, a wax-seal "Est. 1853" mark, and italic
+// correspondence-style copy in place of generic e-commerce phrasing.
+function renderGoyard(v, total, c, logoUrl) {
+  const price = parseFloat(v.price) || 0, tax = parseFloat(v.tax) || 0;
+  return `
+  <div class="goy-wrap">
+    <div class="goy-chevron-band"></div>
+    <div class="goy-header">
+      <div class="goy-seal">EST.<br>1853</div>
+      ${brandLogo(logoUrl, '<span class="goy-logo">Goyard</span>', 20)}
+      <div class="goy-sub-header">Maison Fondée à Paris</div>
+    </div>
+    <div class="goy-stripe-row">
+      <div class="goy-stripe" style="background:#1a1a1a"></div>
+      <div class="goy-stripe" style="background:#e2d5ab"></div>
+      <div class="goy-stripe" style="background:#a08a4f"></div>
+      <div class="goy-stripe" style="background:#1a1a1a"></div>
+    </div>
+    <div class="goy-body">
+      <div class="goy-greeting">Dear ${v.name},<br><br>Thank you for your order. Your purchase ${v.order}, placed on ${v.date}, is being prepared by our ateliers with the utmost care.</div>
+      <div class="goy-product-row">
+        <div class="goy-product-img">${imgEl(v, 'img', '🧳')}</div>
+        <div>
+          <div class="goy-product-name">${v.product}</div>
+          <div class="goy-product-ref">Ref. ${v.ref} — ${v.color}</div>
+          <div class="goy-product-desc">${v.desc}</div>
+          <div class="goy-product-price">${fmt(price, c)}</div>
+        </div>
+      </div>
+      <div class="goy-divider"></div>
+      <div class="goy-line"><span>Subtotal</span><span>${fmt(price, c)}</span></div>
+      <div class="goy-line"><span>Shipping</span><span>Complimentary</span></div>
+      ${tax > 0 ? `<div class="goy-line"><span>Tax</span><span>${fmt(tax, c)}</span></div>` : ''}
+      <div class="goy-line total"><span>Total</span><span>${fmt(total, c)}</span></div>
+      <div class="goy-addr-grid">
+        <div class="goy-addr-block"><strong>Delivery Address</strong>${v.saddr}</div>
+        <div class="goy-addr-block"><strong>Payment</strong>${v.paymethod}</div>
+      </div>
+      <div class="goy-craft-note">Each Goyard piece is hand-finished in our ateliers and bears the personal mark of the craftsman who made it.</div>
+    </div>
+    <div class="goy-footer-chevron"></div>
+    <div class="goy-footer"><p>MAISON GOYARD · GOYARD.COM</p></div>
+  </div>`;
+}
+
+// ─── SUPREME ───
+// The skewed "box logo" treatment, a drop-tag bar, a hangtag-style corner
+// flag on the product block, an authentication stamp, and a perforated
+// tear-line before the footer — reads like a hype-drop confirmation
+// instead of a generic order email with red paint.
+function renderSupreme(v, total, c, logoUrl) {
+  const price = parseFloat(v.price) || 0, ship = parseFloat(v.ship) || 0, tax = parseFloat(v.tax) || 0, disc = parseFloat(v.disc) || 0;
+  return `
+  <div class="sup-wrap">
+    <div class="sup-header">${brandLogo(logoUrl, '<span class="sup-boxlogo">Supreme</span>', 22)}</div>
+    <div class="sup-drop-tag">Limited Drop · Order Confirmed</div>
+    <div class="sup-body">
+      <div class="sup-title">You Copped It</div>
+      <div class="sup-sub">Hey ${v.name}, your order ${v.order} is confirmed. Thanks for shopping Supreme — no reselling, no exceptions.</div>
+      <div class="sup-product-row">
+        <div class="sup-tag-corner">New</div>
+        <div class="sup-product-img">${imgEl(v, 'img', '📦')}</div>
+        <div>
+          <div class="sup-product-name">${v.product}</div>
+          <div class="sup-product-detail">Size: ${v.size} · ${v.color}</div>
+          <div class="sup-product-price">${fmt(price, c)}</div>
+        </div>
+      </div>
+      <div class="sup-lines">
+        <div class="sup-line"><span>Subtotal</span><span>${fmt(price, c)}</span></div>
+        <div class="sup-line"><span>Shipping</span><span>${ship === 0 ? 'FREE' : fmt(ship, c)}</span></div>
+        ${disc > 0 ? `<div class="sup-line"><span>Discount</span><span>-${fmt(disc, c)}</span></div>` : ''}
+        <div class="sup-line"><span>Tax</span><span>${fmt(tax, c)}</span></div>
+        <div class="sup-line total"><span>Total</span><span>${fmt(total, c)}</span></div>
+      </div>
+      <div class="sup-addr"><strong>Ship To</strong>${v.saddr}</div>
+      <div class="sup-stamp">Authenticated · One Per Customer</div>
+    </div>
+    <div class="sup-perf"></div>
+    <div class="sup-footer">© Supreme — No Reselling. No Exceptions.</div>
+  </div>`;
+}
+
+// ─── OVO ───
+// An abstract owl mark (deliberately generic — not a trademark
+// reproduction) in the header and as a faint footer watermark, a gold
+// accent bar on the product row, and a hairline gold rule under the
+// header for the late-night luxury-streetwear feel the brand trades on.
+function renderOVO(v, total, c, logoUrl) {
+  const price = parseFloat(v.price) || 0, ship = parseFloat(v.ship) || 0, tax = parseFloat(v.tax) || 0, disc = parseFloat(v.disc) || 0;
+  const owl = `<svg class="ovo-owl" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.3"><path d="M12 2c-4 0-6 3-6 7 0 5 2 9 6 12 4-3 6-7 6-12 0-4-2-7-6-7z"/><circle cx="9" cy="10" r="1.6" fill="#d4af37" stroke="none"/><circle cx="15" cy="10" r="1.6" fill="#d4af37" stroke="none"/><path d="M12 13l-1.4 2h2.8z" fill="#d4af37" stroke="none"/></svg>`;
+  return `
+  <div class="ovo-wrap">
+    <div class="ovo-header">
+      <div class="ovo-logo-row">${owl}${brandLogo(logoUrl, '<span class="ovo-logo">OVO</span>', 18)}</div>
+      <span class="ovo-tag">October's Very Own</span>
+    </div>
+    <div class="ovo-gold-rule"></div>
+    <div class="ovo-body">
+      <div class="ovo-title">Order Confirmation</div>
+      <div class="ovo-sub">${v.name}, thank you for your order ${v.order}.</div>
+      <div class="ovo-product-row">
+        <div class="ovo-product-img">${imgEl(v, 'img', '🦉')}</div>
+        <div>
+          <div class="ovo-product-name">${v.product}</div>
+          <div class="ovo-product-detail">Size: ${v.size} · ${v.color}</div>
+          <div class="ovo-product-price">${fmt(price, c)}</div>
+        </div>
+      </div>
+      <div class="ovo-lines">
+        <div class="ovo-line"><span>Subtotal</span><span>${fmt(price, c)}</span></div>
+        <div class="ovo-line"><span>Shipping</span><span>${ship === 0 ? 'Free' : fmt(ship, c)}</span></div>
+        ${disc > 0 ? `<div class="ovo-line"><span>Discount</span><span>-${fmt(disc, c)}</span></div>` : ''}
+        <div class="ovo-line"><span>Tax</span><span>${fmt(tax, c)}</span></div>
+        <div class="ovo-line total"><span>Total</span><span>${fmt(total, c)}</span></div>
+      </div>
+      <div class="ovo-addr-grid">
+        <div class="ovo-addr-block"><strong>Ship To</strong>${v.saddr}</div>
+        <div class="ovo-addr-block"><strong>Payment</strong>${v.paymethod}</div>
+      </div>
+      <div class="ovo-owl-watermark">${owl}</div>
+    </div>
+    <div class="ovo-footer">OVO Sound · octobersveryown.com</div>
+  </div>`;
+}
+
 const RENDERERS = {
   end: renderEND,
   goat: renderGOAT,
@@ -354,6 +492,9 @@ const RENDERERS = {
   lv: renderLV,
   patagonia: renderPatagonia,
   amazon: renderAmazon,
+  goyard: renderGoyard,
+  supreme: renderSupreme,
+  ovo: renderOVO,
 };
 
 export function renderReceipt(template, values, currency = '$', logoUrl = '') {
