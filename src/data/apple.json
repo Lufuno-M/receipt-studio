@@ -22,6 +22,6 @@
     { "section": "Pricing" },
     { "id": "price",   "label": "Price",        "default": "6.99", "type": "number", "width": "half" },
     { "id": "tax",     "label": "Tax",          "default": "0.56", "type": "number", "width": "half" },
-    { "id": "_total",  "type": "total" }
+    { "id": "_total",  "type": "total", "label": "Total" }
   ]
 }

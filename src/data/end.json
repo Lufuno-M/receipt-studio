@@ -19,7 +19,7 @@
     { "id": "order",       "label": "Order Number",    "default": "8179391971" },
     { "section": "Product" },
     { "id": "product",     "label": "Product Name",    "default": "AIR JORDAN 2 RETRO" },
-    { "id": "color",       "label": "Colorway",        "default": "Black, Cement Grey, Red & Sail" },
+    { "id": "colorway",    "label": "Colorway",        "default": "Black, Cement Grey, Red & Sail" },
     { "id": "size",        "label": "Size",            "default": "UK 10", "width": "half" },
     { "id": "qty",         "label": "Qty",             "default": "1",     "width": "half" },
     { "id": "img",         "label": "Image URL",       "default": "",      "placeholder": "https://..." },
@@ -28,7 +28,7 @@
     { "id": "disc",        "label": "Discount",        "default": "66",    "type": "number", "width": "half" },
     { "id": "ship",        "label": "Shipping",        "default": "0",     "type": "number", "width": "half" },
     { "id": "tax",         "label": "Tax",             "default": "7.98",  "type": "number", "width": "half" },
-    { "id": "_total",      "type": "total" },
+    { "id": "_total",      "type": "total", "label": "Total" },
     { "section": "Address" },
     { "id": "street",      "label": "Street",          "default": "4110 South 4th Street" },
     { "id": "city",        "label": "City",            "default": "Phoenix",       "width": "half" },
@@ -39,28 +39,5 @@
     { "id": "paymethod",   "label": "Payment Method",  "default": "PayPal" },
     { "id": "arr1",        "label": "Arrival From",    "default": "15/12/2023", "width": "half" },
     { "id": "arr2",        "label": "Arrival To",      "default": "18/12/2023", "width": "half" }
-  ],
-  "receipt": {
-    "blocks": [
-      { "type": "header",    "logo": "END.",  "logoBg": "#1a1a1a" },
-      { "type": "hero",      "bg": "#1a1a1a", "greeting": "Hi {{name}}, We've received your order", "sub": "Your order <a>#{{order}}</a> will soon be on its way. We'll be in touch once it's dispatched." },
-      { "type": "divider" },
-      { "type": "order_summary", "title": "Order Summary" },
-      { "type": "product_row",   "nameField": "product", "colorField": "color", "sizeField": "size", "qtyField": "qty", "priceField": "price", "imgField": "img", "imgFallback": "👟" },
-      { "type": "line_items",    "lines": ["Subtotal:price", "Discount:-disc", "Shipping:ship", "Tax:tax"] },
-      { "type": "total_row" },
-      { "type": "grey_section",  "blocks": [
-        { "type": "address_grid", "fields": ["street","city","country","state"] },
-        { "type": "method_grid",  "fields": [
-          { "label": "Shipping Method", "field": "shipmethod" },
-          { "label": "Payment Method",  "field": "paymethod" },
-          { "label": "Estimated Arrival", "field": "arr1", "field2": "arr2", "accent": true }
-        ]}
-      ]},
-      { "type": "info_block", "title": "Additional Information", "body": "We'll send you an email once your order is dispatched containing tracking details, or you can check its progress by visiting your account. To avoid delays please check your billing address matches the address shown on your card statement." },
-      { "type": "info_block", "title": "Any Questions?", "body": "If you have any issues with your order, please get in touch within 30 minutes. Contact us on +44 (0)333 323 7728 or info@endclothing.com." },
-      { "type": "footer", "bg": "#f2f2f2", "lines": ["T: +44 (0)333 323 7728", "E: info@endclothing.com"] },
-      { "type": "legal", "bg": "#f2f2f2", "text": "END., Unit C Merlin Way, Newcastle Upon Tyne, NE27 0QG | Registered in England - 865368680" }
-    ]
-  }
+  ]
 }

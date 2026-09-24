@@ -1,8 +1,5 @@
 import LogoUploader from './LogoUploader';
 
-// Groups consecutive "half" width fields into row-pairs (mirrors the
-// regex-based pairing the old renderer.js did on the HTML string, just
-// done on data instead of markup).
 function groupFields(fields) {
   const groups = [];
   let pendingHalf = null;
@@ -29,6 +26,29 @@ function groupFields(fields) {
 }
 
 function Field({ f, value, onChange }) {
+  if (f.type === 'textarea') {
+    return (
+      <div className="field">
+        <label>{f.label}</label>
+        <textarea
+          rows={f.rows || 3}
+          value={value ?? ''}
+          placeholder={f.placeholder || ''}
+          onChange={e => onChange(f.id, e.target.value)}
+        />
+      </div>
+    );
+  }
+  if (f.type === 'select') {
+    return (
+      <div className={`field${f.width === 'half' ? ' half' : ''}`}>
+        <label>{f.label}</label>
+        <select value={value ?? ''} onChange={e => onChange(f.id, e.target.value)}>
+          {(f.options || []).map(opt => <option key={opt} value={opt}>{opt}</option>)}
+        </select>
+      </div>
+    );
+  }
   return (
     <div className={`field${f.width === 'half' ? ' half' : ''}`}>
       <label>{f.label}</label>
@@ -42,7 +62,7 @@ function Field({ f, value, onChange }) {
   );
 }
 
-export default function EditorPanel({ template, values, onFieldChange, logoUrl, onLogoChange, total, currency }) {
+export default function EditorPanel({ template, values, onFieldChange, logoUrl, onLogoChange, logoTransform, onLogoTransformChange, onLogoTransformReset, total, currency }) {
   if (!template) {
     return (
       <div id="editor-empty" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, padding: 24 }}>
@@ -61,12 +81,41 @@ export default function EditorPanel({ template, values, onFieldChange, logoUrl, 
         <LogoUploader templateId={template.id} logoUrl={logoUrl} onChange={onLogoChange} />
       </div>
 
+      {logoUrl && (
+        <div className="logo-placement-controls">
+          <label>Logo Placement — drag it on the preview, or fine-tune here</label>
+          <div className="logo-placement-grid">
+            <div className="lp-control">
+              <span>X position</span>
+              <input type="range" min="0" max="100" value={logoTransform.x}
+                onChange={e => onLogoTransformChange({ ...logoTransform, x: Number(e.target.value) })} />
+            </div>
+            <div className="lp-control">
+              <span>Y position</span>
+              <input type="range" min="0" max="100" value={logoTransform.y}
+                onChange={e => onLogoTransformChange({ ...logoTransform, y: Number(e.target.value) })} />
+            </div>
+            <div className="lp-control">
+              <span>Scale</span>
+              <input type="range" min="0.25" max="4" step="0.05" value={logoTransform.scale}
+                onChange={e => onLogoTransformChange({ ...logoTransform, scale: Number(e.target.value) })} />
+            </div>
+            <div className="lp-control">
+              <span>Rotation</span>
+              <input type="range" min="-180" max="180" value={logoTransform.rotation}
+                onChange={e => onLogoTransformChange({ ...logoTransform, rotation: Number(e.target.value) })} />
+            </div>
+          </div>
+          <button type="button" className="btn-s" onClick={onLogoTransformReset}>Reset to default position</button>
+        </div>
+      )}
+
       {groups.map((g, i) => {
         if (g.type === 'section') return <div className="sec" key={i}>{g.field.section}</div>;
         if (g.type === 'total') {
           return (
             <div className="total-box" key={i}>
-              <div className="total-label">Order Total</div>
+              <div className="total-label">{g.field.label || 'Order Total'}</div>
               <div className="total-val">{currency}{total.toFixed(2)}</div>
             </div>
           );

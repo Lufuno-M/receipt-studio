@@ -1,0 +1,18 @@
+{
+  "id": "sicko",
+  "name": "Sickö",
+  "sub": "Recognition",
+  "category": "archive",
+  "initial": "S",
+  "logo": "",
+  "fields": [
+    { "section": "Object" },
+    { "id": "object",  "label": "Object", "default": "Hand-cut Graphic Tee, Red Print" },
+    { "id": "catalogueNo",    "label": "Catalogue No.",   "default": "SK-0042", "width": "half" },
+    { "id": "dateRecognized", "label": "Recognized",      "default": "2026",    "width": "half" },
+    { "id": "edition", "label": "Edition", "default": "Edition of 200, No. 042" },
+    { "section": "Note" },
+    { "id": "note", "label": "Curatorial Note", "type": "textarea", "rows": 3,
+      "default": "Held onto past its first owner. Still sicko." }
+  ]
+}

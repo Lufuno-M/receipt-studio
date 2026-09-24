@@ -1,0 +1,18 @@
+{
+  "id": "yeezy",
+  "name": "Yeezy",
+  "sub": "Recognition",
+  "category": "archive",
+  "initial": "Y",
+  "logo": "",
+  "fields": [
+    { "section": "Object" },
+    { "id": "object",  "label": "Object", "default": "Yeezy Boost 350 V2 \"Zebra\"" },
+    { "id": "catalogueNo",    "label": "Catalogue No.", "default": "YZY-0350", "width": "half" },
+    { "id": "dateRecognized", "label": "Recognized",    "default": "2026",     "width": "half" },
+    { "id": "era", "label": "Era", "default": "Yeezy Supply, 2017 — pre-split" },
+    { "section": "Note" },
+    { "id": "note", "label": "Curatorial Note", "type": "textarea", "rows": 3,
+      "default": "Outlasted the brand deal that made it. Recognized on its own terms now." }
+  ]
+}

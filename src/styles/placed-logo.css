@@ -1,0 +1,95 @@
+.receipt-stage {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.placed-logo {
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+.placed-logo:active { cursor: grabbing; }
+
+.placed-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.25));
+}
+
+.placed-logo-frame {
+  position: absolute;
+  inset: 0;
+  border: 1.5px dashed rgba(200,255,0,0.85);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.placed-logo:hover .placed-logo-frame,
+.placed-logo:active .placed-logo-frame {
+  opacity: 1;
+}
+
+.placed-logo-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #C8FF00;
+  border: 2px solid #0a0a0c;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+.placed-logo-handle-scale {
+  right: -7px;
+  bottom: -7px;
+  cursor: nwse-resize;
+}
+.placed-logo-handle-rotate {
+  left: 50%;
+  top: -26px;
+  transform: translateX(-50%);
+  cursor: grab;
+}
+
+.logo-placement-controls {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.logo-placement-controls > label {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.logo-placement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-bottom: 10px;
+}
+.lp-control {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.lp-control span {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.lp-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}

@@ -4,6 +4,7 @@ import App from './App';
 import './styles/app.css';
 import './styles/receipts.css';
 import './styles/logo-uploader.css';
+import './styles/placed-logo.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

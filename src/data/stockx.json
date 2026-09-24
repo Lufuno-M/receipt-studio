@@ -15,7 +15,7 @@
     { "section": "Pricing" },
     { "id": "price",   "label": "Purchase Price",  "default": "220",   "type": "number", "width": "half" },
     { "id": "ship",    "label": "Shipping",        "default": "13.95", "type": "number", "width": "half" },
-    { "id": "_total",  "type": "total" },
+    { "id": "_total",  "type": "total", "label": "Total Payment" },
     { "section": "Delivery" },
     { "id": "arr1",    "label": "Arrival From",    "default": "04/28/2024", "width": "half" },
     { "id": "arr2",    "label": "Arrival To",      "default": "05/14/2024", "width": "half" }

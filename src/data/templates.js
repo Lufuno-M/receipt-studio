@@ -13,8 +13,24 @@ import amazon from './amazon.json';
 import goyard from './goyard.json';
 import supreme from './supreme.json';
 import ovo from './ovo.json';
+import sicko from './sicko.json';
+import vetements from './vetements.json';
+import yeezy from './yeezy.json';
 
-export const TEMPLATES = [end, goat, nike, stockx, apple, ebay, lv, patagonia, amazon, goyard, supreme, ovo];
+export const TEMPLATES = [
+  end, goat, nike, stockx, apple, ebay, lv, patagonia, amazon, goyard,
+  supreme, ovo, sicko, vetements, yeezy,
+];
 
-export const CATS = { fashion: 'Fashion', tech: 'Technology', market: 'Marketplaces', apparel: 'Apparel', streetwear: 'Streetwear' };
-export const CAT_ORDER = ['fashion', 'tech', 'market', 'apparel', 'streetwear'];
+// Categories now describe document *kind*, not just brand grouping —
+// "archive" holds non-transactional recognition/certificate documents,
+// "service" holds warranty/repair documents. Neither carries a cost ladder.
+export const CATS = {
+  fashion: 'Fashion',
+  tech: 'Technology',
+  market: 'Marketplaces',
+  streetwear: 'Streetwear',
+  service: 'Service',
+  archive: 'Archive',
+};
+export const CAT_ORDER = ['fashion', 'tech', 'market', 'streetwear', 'service', 'archive'];

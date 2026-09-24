@@ -1,10 +1,12 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { TEMPLATES } from './data/templates';
 import { renderReceipt, calcTotal } from './render/renderReceipt';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import Sidebar from './components/Sidebar';
 import EditorPanel from './components/EditorPanel';
 import TemplateIcon from './components/TemplateIcon';
+import PlacedLogo from './components/PlacedLogo';
+import { DEFAULT_LOGO_TRANSFORM, placedLogoStaticHTML } from './components/logoPlacementConstants';
 
 function defaultValues(template) {
   const v = {};
@@ -18,15 +20,22 @@ export default function App() {
   const [currentId, setCurrentId] = useState(null);
   const [valuesByTemplate, setValuesByTemplate] = useState({});
   const [logos, setLogos] = useLocalStorage('rs-logos', {});
+  const [logoTransforms, setLogoTransforms] = useLocalStorage('rs-logo-transforms', {});
   const [favorites, setFavorites] = useLocalStorage('rs-favs', []);
   const [recents, setRecents] = useLocalStorage('rs-recents', []);
   const [currency, setCurrency] = useLocalStorage('rs-currency', '$');
   const previewRef = useRef(null);
+  const stageRef = useRef(null);
   const desktopRef = useRef(null);
   const dividerRef = useRef(null);
 
   const current = TEMPLATES.find(t => t.id === currentId) || null;
   const values = currentId ? (valuesByTemplate[currentId] || defaultValues(current)) : {};
+  const currentLogoUrl = current ? (logos[current.id] || '') : '';
+
+  const logoTransform = current
+    ? (logoTransforms[current.id] || current.logoPlacement || DEFAULT_LOGO_TRANSFORM)
+    : DEFAULT_LOGO_TRANSFORM;
 
   const total = useMemo(() => current ? calcTotal(current, values) : 0, [current, values]);
   const html = useMemo(() => current ? renderReceipt(current, values, currency, logos[current.id]) : '', [current, values, currency, logos]);
@@ -44,6 +53,18 @@ export default function App() {
   function handleLogoChange(templateId, dataUrl) {
     setLogos(prev => ({ ...prev, [templateId]: dataUrl }));
   }
+
+  const handleLogoTransformChange = useCallback((templateId, transform) => {
+    setLogoTransforms(prev => ({ ...prev, [templateId]: transform }));
+  }, [setLogoTransforms]);
+
+  const handleLogoTransformReset = useCallback((templateId) => {
+    setLogoTransforms(prev => {
+      const next = { ...prev };
+      delete next[templateId];
+      return next;
+    });
+  }, [setLogoTransforms]);
 
   function toggleFav(id) {
     setFavorites(prev => prev.includes(id) ? prev.filter(f => f !== id) : [...prev, id]);
@@ -84,10 +105,16 @@ export default function App() {
     };
   }, []);
 
+  function buildReceiptFragmentHTML() {
+    const receiptHtml = previewRef.current?.innerHTML || '';
+    const overlay = currentLogoUrl ? placedLogoStaticHTML(currentLogoUrl, logoTransform) : '';
+    return `<div style="position:relative">${receiptHtml}${overlay}</div>`;
+  }
+
   function buildStandaloneHTML() {
     return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${current?.name || 'Receipt'}</title>
     <style>body{margin:0;padding:24px;background:#e0e0e0;font-family:Arial,sans-serif}@media print{body{background:#fff;padding:0}}</style>
-    </head><body>${previewRef.current?.innerHTML || ''}</body></html>`;
+    </head><body>${buildReceiptFragmentHTML()}</body></html>`;
   }
 
   function handlePrint() {
@@ -117,7 +144,7 @@ export default function App() {
 
   function handleCopy() {
     if (!current || !previewRef.current) return;
-    navigator.clipboard.writeText(previewRef.current.innerHTML);
+    navigator.clipboard.writeText(buildReceiptFragmentHTML());
   }
 
   return (
@@ -151,8 +178,11 @@ export default function App() {
           template={current}
           values={values}
           onFieldChange={handleFieldChange}
-          logoUrl={current ? logos[current.id] : ''}
+          logoUrl={currentLogoUrl}
           onLogoChange={handleLogoChange}
+          logoTransform={logoTransform}
+          onLogoTransformChange={t => current && handleLogoTransformChange(current.id, t)}
+          onLogoTransformReset={() => current && handleLogoTransformReset(current.id)}
           total={total}
           currency={currency}
         />
@@ -178,7 +208,17 @@ export default function App() {
         </div>
         <div className="preview-scroll">
           {current ? (
-            <div id="receipt-wrap" ref={previewRef} dangerouslySetInnerHTML={{ __html: html }} />
+            <div className="receipt-stage" ref={stageRef}>
+              <div id="receipt-wrap" ref={previewRef} dangerouslySetInnerHTML={{ __html: html }} />
+              {currentLogoUrl && (
+                <PlacedLogo
+                  logoUrl={currentLogoUrl}
+                  transform={logoTransform}
+                  onChange={t => handleLogoTransformChange(current.id, t)}
+                  containerRef={stageRef}
+                />
+              )}
+            </div>
           ) : (
             <div id="receipt-wrap">
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '60px 24px', gap: 12, color: 'var(--text-tertiary)' }}>

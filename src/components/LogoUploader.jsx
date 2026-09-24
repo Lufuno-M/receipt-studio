@@ -1,8 +1,5 @@
 import { useRef } from 'react';
 
-// Downscale to a max dimension so base64 logos stay small in localStorage
-// (localStorage is ~5-10MB total across the whole app, shared by every
-// template's logo — an unresized phone photo would eat that fast).
 function resizeToDataURL(file, maxDim = 256) {
   return new Promise((resolve, reject) => {
     const img = new Image();

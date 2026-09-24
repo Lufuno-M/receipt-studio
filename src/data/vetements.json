@@ -1,0 +1,18 @@
+{
+  "id": "vetements",
+  "name": "Vetements",
+  "sub": "Recognition",
+  "category": "archive",
+  "initial": "VTM",
+  "logo": "",
+  "fields": [
+    { "section": "Object" },
+    { "id": "object",  "label": "Object", "default": "Oversized Logo Hoodie, Deconstructed Seam" },
+    { "id": "catalogueNo",    "label": "Catalogue No.", "default": "VTM-0117", "width": "half" },
+    { "id": "dateRecognized", "label": "Recognized",    "default": "2026",     "width": "half" },
+    { "id": "label", "label": "Woven Label Ref.", "default": "MADE IN POLAND — SIZE L" },
+    { "section": "Note" },
+    { "id": "note", "label": "Curatorial Note", "type": "textarea", "rows": 3,
+      "default": "The label is bigger than the logo. That is the point." }
+  ]
+}

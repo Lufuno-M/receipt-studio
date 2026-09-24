@@ -14,8 +14,6 @@ export function useLocalStorage(key, initialValue) {
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (err) {
-      // Quota exceeded (common with base64 logos) — surface in console,
-      // don't crash the app.
       console.error(`Could not persist "${key}" to localStorage`, err);
     }
   }, [key, value]);
